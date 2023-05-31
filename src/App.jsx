@@ -16,19 +16,24 @@ function App() {
   const [notasFiltradas, setNotasFiltradas] = useState([])
 
   useEffect(() => {
-    console.log("Se cambio Gastos D", notaAct);
+    console.log("Se cambio las notas", notaAct);
     localStorage.setItem("notas", JSON.stringify(notaAct));
   }, [notaAct]);
 
  const eliminarNota = (id) => {
   const notasActualizadas = notaAct.filter((nota) =>nota.id !== id)
   setNotaAct(notasActualizadas)
+  
 };
 
 const editarNota = (nota) => {
+  console.log("holis")
   console.table(nota);
+
   setNotaEditar(nota);
+  eliminarNota(nota.id)
   setNewNota(true);
+
 };
 
   return (

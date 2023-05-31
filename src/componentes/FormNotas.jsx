@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {generarId} from '../helpers/numbers';
 
+
 const FormNotas = ({
   setNotaAct,
   notaAct,
@@ -14,6 +15,7 @@ const FormNotas = ({
   
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("holaa")
     const nota =[
       {
         nombre,
@@ -22,10 +24,10 @@ const FormNotas = ({
         id: generarId()
       }
     ]
-   // if ()
  //   notaEditar(false)
     setNotaAct([...notaAct, ...nota])
     setNewNota(false);
+  
   }
     return (
         <div className="bg-white shadow-lg rounded-md py-5 w-1/2 md:w-1/3 mx-auto mt-20">
